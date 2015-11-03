@@ -5,12 +5,8 @@ class ApplicationController < ActionController::Base
 
 	# If your model is called User
 	def after_sign_in_path_for(resource)
-	  if current_user.admin?
-	  	payments_path
-	  else
-	  	events_path 
-	  end
-	  #session["user_return_to"] || root_path
+	  #if current_user.admin?
+	  	dashboard_path
 	end
 
 end

@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
   resources :payments
   resources :events
-
+  #get '/about', to: 'pages#aboutUs', as: 'about'
+  get '/dashboard',to: "dashboard#index" , as: '/dashboard'
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-  
+  root 'dashboard#index'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

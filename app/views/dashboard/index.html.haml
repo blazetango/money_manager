@@ -1,0 +1,6 @@
+-if current_user.admin
+	=link_to "Create Event", new_event_path
+	%br
+	=link_to "List events", events_path
+-else
+	=link_to "Create Payment", new_payment_path
