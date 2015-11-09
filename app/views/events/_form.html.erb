@@ -23,6 +23,14 @@
     <%= f.label :location %><br>
     <%= f.text_field :location %>
   </div>
+  Select Users for event
+  <% for user in User.all %>
+    <div>
+      <%= check_box_tag "event[user_ids][]", user.id %>
+      <%= user.name %>
+    </div>
+<% end %>
+ 
   <div class="actions">
     <%= f.submit %>
   </div>
