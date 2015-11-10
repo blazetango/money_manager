@@ -4,7 +4,11 @@ class PaymentsController < ApplicationController
   # GET /payments
   # GET /payments.json
   def index
-    @payments = Payment.all
+    if current_user.admin
+     @payments = Payment.all
+    else
+     @payments = current_user.payments
+    end
   end
 
   # GET /payments/1
