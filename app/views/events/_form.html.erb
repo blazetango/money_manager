@@ -26,7 +26,7 @@
   Select Users for event
   <% for user in User.all %>
     <div>
-      <%= check_box_tag "event[user_ids][]", user.id %>
+      <%= check_box_tag "event[user_ids][]", user.id%>
       <%= user.name %>
     </div>
 <% end %>

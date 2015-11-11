@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :payments
+  resources :payments do
+    member do
+      get :update_status
+      get :revert_status
+    end
+  end    
   resources :events
   #get '/about', to: 'pages#aboutUs', as: 'about'
   get '/dashboard',to: "dashboard#index" , as: '/dashboard'
