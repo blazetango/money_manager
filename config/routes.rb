@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     member do
       get :update_status
       get :revert_status
+      get :await_status
     end
   end    
   resources :events

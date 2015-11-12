@@ -1,5 +1,5 @@
 class PaymentsController < ApplicationController
-  before_action :set_payment, only: [:show, :edit, :update, :destroy, :update_status, :revert_status]
+  before_action :set_payment, only: [:show, :edit, :update, :destroy, :update_status, :revert_status, :await_status]
   before_action :authenticate_user!
   # GET /payments
   # GET /payments.json
@@ -23,6 +23,12 @@ class PaymentsController < ApplicationController
 
   # GET /payments/1/edit
   def edit
+  end
+  
+  def await_status
+    @payment.status = "Awaiting"
+    @payment.save
+    redirect_to :back
   end
 
   def update_status
