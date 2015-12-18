@@ -19,7 +19,9 @@
         <td><%= payment.status %></td>
         <% unless current_user.admin? %>
         <td><%= link_to "paid from my end", await_status_payment_path(payment) %></td>
+        <td><%= link_to "revert payment", revert_status_payment_path(payment) %></td>
         <% end %>
+
         <!--<td><%#= link_to 'Show', payment %></td>
         <td><%#= link_to 'Edit', edit_payment_path(payment) %></td>
         <td><%#= link_to 'Destroy', payment, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->

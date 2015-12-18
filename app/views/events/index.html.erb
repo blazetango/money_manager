@@ -8,6 +8,7 @@
       <th>Name</th>
       <th>Amount</th>
       <th>Location</th>
+      <th>share per head</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,6 +19,7 @@
         <td><%= event.name %></td>
         <td><%= event.amount %></td>
         <td><%= event.location %></td>
+        <td><%= event.payments.first.try(:amount) %></td>
         <td><%= link_to 'Show', event %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
         <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
