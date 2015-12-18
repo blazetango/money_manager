@@ -3,6 +3,9 @@ class Payment < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :event
 
+  PENDING_STATUS = 'Pending'
+  AWAITING_STATUS = 'Awaiting'
+  PAID_STATUS = 'Paid'
 	def update_amount
     self.amount = (self.event.amount/self.event.users.size)
 	end

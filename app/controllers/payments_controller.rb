@@ -8,6 +8,7 @@ class PaymentsController < ApplicationController
      @payments = Payment.all
     else
      @payments = current_user.payments
+     @total_due = Payment.where(status: Payment::PENDING_STATUS, user: current_user).sum(:amount)
     end
   end
 
